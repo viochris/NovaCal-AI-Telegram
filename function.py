@@ -1,3 +1,5 @@
+import os
+import json
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from langchain.tools import tool
@@ -14,7 +16,20 @@ def get_id_of_schedules(keyword: str) -> str:
     """
     try:
         # 1. Authenticate with the Google Calendar API using the predefined scopes
-        creds = Credentials.from_authorized_user_file("token.json", ['https://www.googleapis.com/auth/calendar'])
+        scopes = ['https://www.googleapis.com/auth/calendar']
+        
+        # Retrieve the authentication token from environment variables
+        token_env = os.getenv('GOOGLE_CALENDAR_TOKEN')
+        
+        if token_env:
+            # If environment variable exists, parse it and create credentials
+            token_info = json.loads(token_env)
+            creds = Credentials.from_authorized_user_info(token_info, scopes)
+        else:
+            # Fallback: Load credentials from the local 'token.json' file if no env variable is found
+            creds = Credentials.from_authorized_user_file('token.json', scopes)
+
+        # Initialize the Google Calendar service using the generated credentials
         service = build('calendar', 'v3', credentials=creds)
 
         # 2. Execute a free-text search query ('q') against the primary calendar
@@ -76,7 +91,20 @@ def get_all_schedules(start_date: str, end_date: str) -> str:
     """
     try:
         # 1. Authenticate with Google Calendar API using stored credentials
-        creds = Credentials.from_authorized_user_file("token.json", ['https://www.googleapis.com/auth/calendar'])
+        scopes = ['https://www.googleapis.com/auth/calendar']
+        
+        # Retrieve the authentication token from environment variables
+        token_env = os.getenv('GOOGLE_CALENDAR_TOKEN')
+        
+        if token_env:
+            # If environment variable exists, parse it and create credentials
+            token_info = json.loads(token_env)
+            creds = Credentials.from_authorized_user_info(token_info, scopes)
+        else:
+            # Fallback: Load credentials from the local 'token.json' file if no env variable is found
+            creds = Credentials.from_authorized_user_file('token.json', scopes)
+
+        # Initialize the Google Calendar service using the generated credentials
         service = build('calendar', 'v3', credentials=creds)
         
         # 2. Format the time boundaries (Appending +07:00 for WIB/Jakarta Timezone)
