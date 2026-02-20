@@ -14,7 +14,7 @@ Powered by a **LangChain Tool-Calling Agent** and **Google Gemini 2.5 Flash**, t
 
 > **🌐 STREAMLIT VERSION:** If you are looking for the Visual Web UI (Dashboard) version of NovaCal AI, please visit the **[NovaCal AI Streamlit Repository](https://github.com/viochris/NovaCal-AI-Streamlit.git)**.
 
-## ⚠️ IMPORTANT: PRIVATE CALENDAR ACCESS
+## ⚠️ IMPORTANT: Why This Bot Is Locked To A Single User?
 > This bot is authenticated using your personal Google Calendar credentials. If it were open to the public, anyone on Telegram could read your private schedules, add fake events, or delete your important meetings!
 >
 > To prevent this massive security risk, the bot is strictly locked to YOU (the developer). By matching the user's ID with the 'TELEGRAM_DEVELOPER_CHAT_ID' stored in your environment variables, the system ensures that only your specific Telegram account can give commands or read your Google Calendar. 
