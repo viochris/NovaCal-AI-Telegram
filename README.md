@@ -85,10 +85,11 @@ Native LangChain search tools (`CalendarSearchEvents`) are intentionally disable
 
 ### 🖥️ Expected Terminal Output
 You will see the bot initialize the LangChain Agent and start polling in real-time:
+
 ```text
 2026-02-20 09:19:26,123 - root - INFO - 🚀 NovaCal AI Telegram Bot is currently online and listening...
-2026-02-20 09:25:10,001 - httpx - INFO - HTTP Request: POST [https://api.telegram.org/bot](https://api.telegram.org/bot)<TOKEN>/getUpdates "HTTP/1.1 200 OK"
-2026-02-20 09:30:45,432 - root - WARNING - 🚨 INTRUSION ATTEMPT: Unauthorized access blocked from User ID: 987654321
+2026-02-20 09:25:10,001 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot1234...:98.../getUpdates "HTTP/1.1 200 OK"
+2026-02-20 09:30:45,432 - root - WARNING - 🚨 INTRUSION ATTEMPT: Unauthorized access blocked from User ID: 9876...
 ```
 
 ### 🚀 Cloud Deployment
