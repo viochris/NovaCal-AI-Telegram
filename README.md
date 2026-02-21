@@ -12,7 +12,9 @@
 
 Powered by a **LangChain Tool-Calling Agent** and **Google Gemini 2.5 Flash**, this bot operates on a **Zero-Memory (Stateless)** architecture. It is designed for maximum token efficiency, minimal hallucinations, and lightning-fast single-turn command execution. It features custom-built scheduling tools (The Sniper & The Fetcher) to securely Create, Read, Update, and Delete (CRUD) your calendar events.
 
-> **🌐 STREAMLIT VERSION:** If you are looking for the Visual Web UI (Dashboard) version of NovaCal AI, please visit the **[NovaCal AI Streamlit Repository](https://github.com/viochris/NovaCal-AI-Streamlit.git)**.
+> **🌐 EXPLORE OTHER VERSIONS OF NOVACAL AI:**
+> * **[Streamlit Dashboard Edition](https://github.com/viochris/NovaCal-AI-Streamlit.git):** If you are looking for the Visual Web UI version of NovaCal AI.
+> * **[Stateful Telegram Edition (With Memory)](https://github.com/viochris/telegram-calendar-ai-bot.git):** If you are looking for the conversational, SQL-backed memory version capable of multi-turn interactions.
 
 ## ⚠️ IMPORTANT: Why This Bot Is Locked To A Single User?
 > This bot is authenticated using your personal Google Calendar credentials. If it were open to the public, anyone on Telegram could read your private schedules, add fake events, or delete your important meetings!
