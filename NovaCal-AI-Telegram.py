@@ -174,8 +174,8 @@ async def howtouse_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -
         "✅ *Good:* 'Schedule a meeting tomorrow at 3 PM.'\n\n"
         
         "⏱️ **2. PARAMETER SAFETY**\n"
-        "Always define the duration! If you don't specify an end time, I will automatically assume a **1-hour duration** by default.\n\n"
-        
+        "Always try to define the duration! If you don't specify an end time, I will either **ask you a follow-up question** to confirm, or automatically assume a **1-hour duration** by default. *(Don't worry, we can always update it!)*\n\n"
+
         "⚙️ **3. COMMAND CHEAT SHEET (CRUD)**\n"
         "To perform actions, just talk to me naturally using these formats:\n\n"
         
